@@ -1,0 +1,31 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+' 隐藏类的属性和方法
+class Client {}
+hide Client members
+
+' 显示类的方法但不显示属性
+class Target {
+  +Request()
+}
+hide Target fields
+
+class Adaptee {
+  +SpecificRequest()
+}
+hide Adaptee fields
+
+class Adapter {
+  +Request()
+}
+hide Adapter fields
+
+note "adaptee->SpecificRequest()" as n1
+n1 . Adapter
+
+Client --> Target
+Target <|-- Adapter
+Adaptee <-- Adapter : (implementaion)
+
+@enduml
