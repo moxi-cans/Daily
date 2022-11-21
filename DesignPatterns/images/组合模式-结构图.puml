@@ -1,0 +1,40 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+skinparam linetype ortho
+class Client{}
+hide Client members
+
+class Composite{
+    +Operation()
+    +Add(component)
+    +Remove(component)
+    +GetChild(index)
+}
+
+
+class Component <<(A,FF7700)>> {
+    +Operation()
+    +Add(component)
+    +Remove(component)
+    +GetChild(index)
+}
+hide Component fields
+
+class Leaf{
+    +Operation()
+}
+hide Leaf fields
+
+
+note "forall g in children g.Operation()." as N1
+N1 .. Composite
+
+Client --> Component
+Component <|-- Leaf
+Component <|-- Composite
+
+Component <--o "children" Composite
+
+
+@enduml
