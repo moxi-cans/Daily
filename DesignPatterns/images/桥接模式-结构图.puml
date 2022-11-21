@@ -1,0 +1,40 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Client {}
+hide Client members
+
+class Abstraction {
+  +Operation()
+}
+hide Abstraction fields
+
+class RefinedAbstraction {}
+hide RefinedAbstraction members
+
+class Implementor {
+  +OperationImpl()
+}
+hide Implementor fields
+
+class ConcreteImplementorA {
+  +OperationImpl()
+}
+hide ConcreteImplementorA fields
+
+class ConcreteImplementorB {
+  +OperationImpl()
+}
+hide ConcreteImplementorB fields
+
+Client --> Abstraction
+Abstraction <|-- RefinedAbstraction
+Abstraction o--> Implementor
+Implementor <|-- ConcreteImplementorA
+Implementor <|-- ConcreteImplementorB
+
+note "imp->OperationImpl()" as N1
+N1 . Abstraction
+
+
+@enduml
