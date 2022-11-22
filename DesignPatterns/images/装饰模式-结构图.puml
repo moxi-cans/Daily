@@ -1,0 +1,45 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+'曲线
+skinparam linetype ortho
+
+interface Component {
+    +operation()
+}
+hide Component fields
+
+abstract Decorator {
+    +operation()
+}
+hide Decorator fields
+
+Note "component->Operation()" as n1
+n1 .. Decorator
+
+class ConcreteComponent {
+    +operation()
+}
+hide ConcreteComponent fields
+
+class ConcreteDecoratorA {
+    +operation()
+    -addedState
+}
+
+class ConcreteDecoratorB {
+    +operation()
+    +addedBehavior()
+}
+hide ConcreteDecoratorB fields
+
+Note "Decorator::Operation();addedBehavior()" as n2
+n2 .. ConcreteDecoratorB
+
+ConcreteComponent --|> Component
+Decorator --|> Component
+Component <--o "component" Decorator
+
+ConcreteDecoratorA --|> Decorator
+ConcreteDecoratorB --|> Decorator
+@enduml
