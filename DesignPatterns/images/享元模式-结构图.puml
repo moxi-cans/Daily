@@ -1,0 +1,45 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+skinparam linetype polyline
+
+class FlyweightFactory {
+    GetFlyweight(key)
+}
+hide FlyweightFactory fields
+
+abstract class Flyweight{
+    Operation(extrinsicState)
+}
+hide Flyweight fields
+
+class ConcreteFlyweight{
+    Operation(extrinsicState)
+    intrinsicState
+}
+
+class UnsharedConcreteFlyweight{
+    Operation(extrinsicState)
+    allState
+}
+
+class Client{
+}
+hide Client members
+
+Client -> FlyweightFactory
+
+Client -> ConcreteFlyweight
+
+Client -> UnsharedConcreteFlyweight
+
+ConcreteFlyweight --|> Flyweight
+
+UnsharedConcreteFlyweight --|> Flyweight
+
+FlyweightFactory <--o Flyweight
+
+
+
+
+@enduml
