@@ -1,0 +1,45 @@
+@startmindmap
+'https://plantuml.com/mindmap-diagram
+
+title 学习小记图
+
++ MySQL
+
+++ 一条查询语句的运行
+
++++ 1. 连接器
+++++ 建立连接
+++++ 身份验证
+++++ 管理连接
+++++ 维持连接
+
++++ 2. 分析器
+++++ 词法分析
++++++ 分析SQL字符串的意义（是什么，代表什么）
+++++ 语法分析
++++++ 分析SQL语句是否符合规则
+
++++ 3. 优化器
+++++ 决定索引
+++++ 决定Join时，表连接顺序
+
++++ 4. 执行器
+++++ 判断用户对表的权限
+++++ 执行查询
+
+
+
+
+
+
+header
+moxi 的MySQL学习小记
+endheader
+
+legend left
+    MySQL 分为Server层和存储引擎
+endLegend
+
+center footer moxi 的MySQL学习小记
+
+@endmindmap
