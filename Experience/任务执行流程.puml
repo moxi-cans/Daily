@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+if(是否有一条任务被锁住) then (否)
+    :加锁;
+    if(缓存中是否存在"lastId") then (否)
+        :lastId = 0;
+    endif
+        :从数据库中，查询出待执行的、id > lastId的任务;
+        :执行任务;
+    if(任务执行成功) then
+        :更新任务状态为执行成功;
+    endif
+        :将任务id存在缓存中;
+        :解锁;
+else (是)
+    :等待;
+endif
+
+stop
+
+@enduml
