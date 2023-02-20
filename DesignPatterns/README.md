@@ -19,20 +19,20 @@
 
 箭头指向：带空心三角形的实线箭头，箭头指向父类。
 
-![](images/generalization.png)
+![](img/generalization.png)
 
 #### 实现(realization)
 定义：是一种类与接口的关系，表示类是接口所有特征和行为的实现。
 
 箭头指向：带空心三角形的虚线箭头，箭头指向接口。
 
-![](images/realization.png)
+![](img/realization.png)
 
 #### 关联(association)
 定义：是一种拥有的关系，它使一个类知道另一个类的属性和方法。
 
 箭头指向：双向的关联可以有两个箭头或者没有箭头，单向的关联只有一个箭头，箭头指向被拥有的一方。
 
-![](images/asspciation.png)
+![](img/asspciation.png)
 
 #### 聚合(aggregation)

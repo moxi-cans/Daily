@@ -74,7 +74,7 @@ excelUtil::generateExcel($array, '2022届1班.xls');
 
 效果：
 
-![image](https://github.com/moxi-xi/cans/blob/main/Experience/exportTest1.png)
+![image](img/exportTest1.png)
 
 # 难度+1
 
