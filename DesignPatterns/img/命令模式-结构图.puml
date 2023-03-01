@@ -1,0 +1,40 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+class Receiver {
+   Action()
+}
+hide Receiver fields
+
+class ConcreteCommand {
+    Execute()
+    state
+}
+
+ConcreteCommand -> Receiver :receiver
+
+class Client {
+}
+hide Client members
+
+Client -> Receiver
+
+note "receiver->Action();" as N1
+N1 .. ConcreteCommand
+
+class Command {
+    Execute()
+}
+hide Command fields
+
+ConcreteCommand -|> Command
+
+class Invoker {
+}
+hide Invoker members
+
+Command <-*Invoker
+
+
+@enduml
