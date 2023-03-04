@@ -22,6 +22,8 @@
 
 ## PhpStorm
 
+### 插件
+
 必装插件：
 
 + GitToolBox 能看见这行代码是谁提交的
@@ -29,3 +31,16 @@
 + PHP Annotation
 + Translation 
 + PlantUML Integration 画图好用，学习成本低
+
+选择性安装：
+
++ Paste Images into Markdown 装上后，写Markdown文档，可以直接Ctrl + c 粘贴图片咯
++ Background Image Plus + 让编辑器更加的好看（缺点是可能有点花+占内存）
+
+### 快捷键
+
+批量编辑：Alt + j 
+
+自动生成：右键 -> Generate or Alt + Insert
+
+自己创建快捷键：Settings -> Keymap
